@@ -6,12 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-/**
- * Entidad que representa a un alumno dentro del sistema.
- *
- * <p>Mapea la tabla {@code alumnos} e incluye información personal,
- * académica y de control de registro.</p>
- */
+
 @Data
 @Entity
 @Table(name = "alumnos", indexes = {
@@ -21,9 +16,9 @@ import java.time.LocalDateTime;
 })
 public class Alumno {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+@Id
+@GeneratedValue(strategy = GenerationType.SEQUENCE)
+private Long id;
 
     @Column(length = 20, nullable = false, unique = true)
     private String matricula;
